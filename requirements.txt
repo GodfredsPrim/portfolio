@@ -1,2 +1,3 @@
 Flask==3.0.3
-actually, I have screenshot for Job Match Web App, with screenshots named, jobmatch, jobmatch1, jobmatch2, jobmatch3, the link address is . Student Analytics Web App with screenshots named, student, student1, student2. And DCLM App for church Attendance and Finance with screenshot named, dclm. the link address is https://dclm-mka6.onrender.com/
+gunicorn==22.0.0
+python-dotenv==1.0.1
