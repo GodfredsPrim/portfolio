@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Godfred Bio Conquest | Godfreds Prim 3.0</title>
+
+  <!-- Favicon & Social Preview -->
+  <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
+  <meta property="og:title" content="Godfred Bio Conquest – Godfreds Prim 3.0">
+  <meta property="og:description" content="AI/ML Engineer • Full-Stack Developer • Ghana">
+  <meta property="og:image" content="/static/images/profile.jpg">
+
+  <!-- Libraries -->
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&family=JetBrains+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+
+  <style>
+    body { 
+      font-family: 'Inter', sans-serif; 
+      background: #000; 
+      margin: 0;
+      overflow-x: hidden;
+    }
+    .glass { 
+      background: rgba(255,255,255,0.06); 
+      backdrop-filter: blur(20px); 
+      -webkit-backdrop-filter: blur(20px); 
+      border: 1px solid rgba(255,255,255,0.1); 
+      border-radius: 28px; 
+      transition: all 0.3s ease;
+    }
+    .glass:hover { 
+      background: rgba(255,255,255,0.08); 
+      border-color: rgba(6, 251, 208, 0.3);
+      box-shadow: 0 25px 50px -12px rgba(6, 251, 208, 0.15);
+    }
+    .terminal { font-family: 'JetBrains Mono', monospace; }
+    .typewriter h1 { 
+      overflow: hidden; 
+      border-right: .15em solid #06fbd0; 
+      white-space: nowrap; 
+      animation: typing 3.5s steps(30) forwards, blink .75s step-end infinite; 
+    }
+    @keyframes typing { from { width: 0 } to { width: 100% } }
+    @keyframes blink { from, to { border-color: transparent } 50% { border-color: #06fbd0; } }
+    
+    /* AURA EFFECTS */
+    .aura-cyan {
+      box-shadow: 
+        0 0 20px rgba(6, 251, 208, 0.3),
+        0 0 40px rgba(6, 251, 208, 0.1),
+        0 0 80px rgba(6, 251, 208, 0.05);
+      transition: all 0.4s ease;
+    }
+    .aura-cyan:hover {
+      box-shadow: 
+        0 0 30px rgba(6, 251, 208, 0.6),
+        0 0 60px rgba(6, 251, 208, 0.3),
+        0 0 120px rgba(6, 251, 208, 0.15);
+    }
+    .aura-purple {
+      box-shadow: 
+        0 0 20px rgba(167, 139, 250, 0.3),
+        0 0 40px rgba(167, 139, 250, 0.1),
+        0 0 80px rgba(167, 139, 250, 0.05);
+    }
+    .aura-purple:hover {
+      box-shadow: 
+        0 0 30px rgba(167, 139, 250, 0.6),
+        0 0 60px rgba(167, 139, 250, 0.3),
+        0 0 120px rgba(167, 139, 250, 0.15);
+    }
+    
+    /* HOVER SCALE */
+    .hover-scale { 
+      transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    }
+    .hover-scale:hover { 
+      transform: translateY(-4px) scale(1.02); 
+    }
+    
+    /* Social Icons */
+    .social-icon {
+      width: 48px;
+      height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+    }
+    .github-icon { 
+      background: linear-gradient(135deg, #24292e 0%, #1a1f24 100%);
+      color: white;
+    }
+    .linkedin-icon { 
+      background: linear-gradient(135deg, #0077b5 0%, #005582 100%);
+      color: white;
+    }
+    .social-icon:hover {
+      transform: translateY(-3px) scale(1.1);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
+  </style>
+</head>
+
+<body class="text-white overflow-x-hidden">
+
+  <!-- FULL-PAGE LIVE PARTICLE ANIMATION -->
+  <canvas id="particles" class="fixed inset-0 -z-10 pointer-events-none"></canvas>
+
+  <!-- HERO -->
+  <section id="home" class="relative min-h-screen flex items-center justify-center px-6" data-aos="fade-up">
+    <div class="relative z-10 max-w-7xl mx-auto text-center">
+      <div class="glass p-10 lg:p-20 max-w-5xl mx-auto hover-scale">
+
+        <!-- PROFILE PICTURE WITH AURA -->
+        <div class="mx-auto w-64 h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden border-8 border-cyan-400 aura-cyan mb-10 hover-scale">
+          <img src="/static/images/profile.jpg" alt="Godfred Bio Conquest" class="w-full h-full object-cover">
+        </div>
+
+        <div class="terminal text-left text-cyan-400 text-sm mb-8 max-w-2xl mx-auto">
+          <span class="text-green-400">$</span> whoami<br>
+          <span class="text-cyan-300">Godfred Bio Conquest</span><br>
+          <span class="text-green-400">$</span> cat mission.txt<br>
+          <span class="text-gray-400">Building Ghana's future with AI & code</span>
+        </div>
+
+        <p class="text-cyan-400 text-sm tracking-widest uppercase mb-4">AI/ML Engineer · Web Developer · Graphic Designer</p>
+        <div class="typewriter inline-block">
+          <h1 class="text-7xl lg:text-9xl font-black leading-none">Godfred<br><span class="text-8xl lg:text-10xl text-cyan-300">Bio Conquest</span></h1>
+        </div>
+        <p class="text-5xl lg:text-7xl font-bold text-cyan-400 mt-4 animate-pulse">Godfreds Prim 3.0</p>
+
+        <div class="flex flex-wrap justify-center gap-8 mt-12 text-gray-200 text-lg">
+          <span>godfredbio2004@gmail.com</span>
+          <span>+233 59 996 6902</span>
+          <span>Cape Coast • UCC</span>
+        </div>
+
+        <div class="flex flex-col sm:flex-row justify-center gap-8 mt-12">
+          <a href="/static/Godfred_Bio_Conquest_Resume.pdf" download 
+             class="bg-gradient-to-r from-cyan-400 to-blue-500 text-black px-12 py-6 rounded-full font-bold text-xl hover-scale aura-cyan inline-flex items-center gap-3 shadow-2xl">
+            📄 Download CV
+          </a>
+          <button onclick="copyEmail()" 
+                  class="glass px-12 py-6 rounded-full font-bold text-xl hover-scale border-2 border-cyan-400/30 flex items-center gap-3">
+            📧 Copy Email
+          </button>
+        </div>
+
+        <div class="mt-12">
+          <span class="inline-block bg-gradient-to-r from-green-500/20 to-emerald-500/20 text-green-400 px-8 py-3 rounded-full text-lg font-bold border border-green-500/30">
+            🚀 Available for Work
+          </span>
+          <p class="mt-6 text-gray-400 text-lg">Visitors Today: <span id="visitor-count" class="text-cyan-400 font-mono">—</span></p>
+        </div>
+
+        <nav class="flex flex-wrap justify-center gap-6 mt-16">
+          <a href="#home" class="glass px-8 py-4 rounded-full font-medium hover-scale aura-cyan">Home</a>
+          <a href="#about" class="glass px-8 py-4 rounded-full font-medium hover-scale aura-purple">About</a>
+          <a href="#skills" class="glass px-8 py-4 rounded-full font-medium hover-scale aura-cyan">Skills</a>
+          <a href="#projects" class="glass px-8 py-4 rounded-full font-medium hover-scale aura-purple">Projects</a>
+          <a href="#contact" class="glass px-8 py-4 rounded-full font-medium hover-scale aura-cyan">Contact</a>
+        </nav>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="py-32 px-8 max-w-7xl mx-auto" data-aos="fade-up">
+    <div class="glass p-12 lg:p-20 hover-scale">
+      <h2 class="text-5xl lg:text-6xl font-black text-cyan-400 mb-10">About Me</h2>
+      <p class="text-xl lg:text-2xl text-gray-300 leading-relaxed max-w-4xl mx-auto">
+        I'm Godfred Bio Conquest — Godfreds Prim 3.0 — a Computer Science student at the University of Cape Coast building the future at the intersection of AI, full-stack development, and bold visual design. 
+        From training ML models on Ghanaian crop data to deploying production apps used by real schools and churches — I ship fast, clean, and impactful.
+      </p>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="py-32 px-8 max-w-7xl mx-auto" data-aos="fade-up">
+    <div class="glass p-12 lg:p-20 hover-scale">
+      <div class="flex justify-between items-center mb-16">
+        <div class="flex flex-wrap gap-8">
+          <img src="/static/images/python.jpeg" class="w-14 hover-scale transition-transform duration-300" alt="Python" title="Python">
+          <img src="/static/images/tensorflow.jpeg" class="w-14 hover-scale transition-transform duration-300" alt="TensorFlow" title="TensorFlow">
+          <img src="/static/images/flask.jpeg" class="w-14 hover-scale transition-transform duration-300" alt="Flask" title="Flask">
+          <img src="/static/images/react.jpeg" class="w-14 hover-scale transition-transform duration-300" alt="React" title="React">
+          <img src="/static/images/photoshop.jpeg" class="w-14 hover-scale transition-transform duration-300" alt="Photoshop" title="Photoshop">
+          <img src="/static/images/streamlit.jpeg" class="w-14 hover-scale transition-transform duration-300" alt="Streamlit" title="Streamlit">
+          <img src="/static/images/opencv.jpeg" class="w-14 hover-scale transition-transform duration-300" alt="OpenCV" title="OpenCV">
+          <img src="/static/images/pandas.jpeg" class="w-14 hover-scale transition-transform duration-300" alt="Pandas" title="Pandas">
+          <img src="/static/images/django.jpeg" class="w-14 hover-scale transition-transform duration-300" alt="Django" title="Django">
+          <img src="/static/images/github.jpeg" class="w-14 hover-scale transition-transform duration-300" alt="GitHub" title="GitHub">
+          <img src="/static/images/kaggle.jpeg" class="w-14 hover-scale transition-transform duration-300" alt="Kaggle" title="Kaggle">
+        </div>
+        <a href="/static/Godfred_Bio_Conquest_Resume.pdf" download 
+           class="bg-gradient-to-r from-cyan-400 to-blue-500 text-black px-10 py-5 rounded-full font-bold hover-scale aura-cyan shadow-lg">
+          Download CV
+        </a>
+      </div>
+
+      <div class="grid lg:grid-cols-3 gap-12">
+        <div class="lg:col-span-2">
+          <h3 class="text-cyan-400 text-2xl font-bold mb-8">Programming Languages</h3>
+          <div class="space-y-6">
+            <div><div class="flex justify-between mb-2"><span class="text-gray-300">Python</span><span class="text-cyan-400">Expert</span></div><div class="h-3 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full"></div></div>
+            <div><div class="flex justify-between mb-2"><span class="text-gray-300">JavaScript/React</span><span class="text-cyan-400">Advanced</span></div><div class="h-3 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full w-11/12"></div></div>
+            <div><div class="flex justify-between mb-2"><span class="text-gray-300">SQL</span><span class="text-cyan-400">Advanced</span></div><div class="h-3 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full w-10/12"></div></div>
+            <div><div class="flex justify-between mb-2"><span class="text-gray-300">HTML/CSS/Tailwind</span><span class="text-cyan-400">Advanced</span></div><div class="h-3 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full w-11/12"></div></div>
+          </div>
+        </div>
+        <div>
+          <h3 class="text-cyan-400 text-2xl font-bold mb-8">Spoken Languages</h3>
+          <div class="space-y-6 text-gray-300">
+            <div><div class="flex justify-between mb-2"><span>English</span><span>Native</span></div><div class="h-3 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full"></div></div>
+            <div><div class="flex justify-between mb-2"><span>Twi</span><span>Fluent</span></div><div class="h-3 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full w-11/12"></div></div>
+            <div><div class="flex justify-between mb-2"><span>Sefwi</span><span>Conversational</span></div><div class="h-3 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full w-8/12"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-16">
+        <h3 class="text-cyan-400 text-2xl font-bold mb-4">Education</h3>
+        <p class="text-xl font-bold text-white">BSc Computer Science</p>
+        <p class="text-cyan-300 text-lg">University of Cape Coast • Expected 2028</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="py-32 px-8 max-w-7xl mx-auto" data-aos="fade-up">
+    <div class="glass p-12 lg:p-20 hover-scale">
+      <h2 class="text-5xl lg:text-6xl font-black text-cyan-400 mb-20">Featured Projects</h2>
+      <div class="space-y-32">
+
+        <!-- Job Match Ghana -->
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <div x-data="{ slides: ['jobmatch.jpeg','jobmatch1.jpeg','jobmatch2.jpeg','jobmatch3.jpeg'], index: 0 }" 
+               @click="index = (index + 1) % slides.length" 
+               class="relative rounded-3xl overflow-hidden cursor-pointer group aura-cyan hover-scale">
+            <template x-for="(slide, i) in slides" :key="i">
+              <img :src="'/static/images/projects/' + slide" 
+                   x-show="i === index" 
+                   x-transition 
+                   class="w-full rounded-3xl shadow-2xl border border-gray-800" 
+                   alt="Job Match">
+            </template>
+            <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+              <template x-for="(slide, i) in slides">
+                <div :class="i === index ? 'w-8 bg-cyan-400' : 'w-2 bg-gray-600'" class="h-2 rounded-full transition-all"></div>
+              </template>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-5xl font-bold text-cyan-400">Job Match Ghana</h3>
+            <p class="text-gray-400 mt-4">Full-Stack • Streamlit • AI Matching</p>
+            <p class="text-xl text-gray-300 mt-8 leading-relaxed">Smart job platform reducing youth unemployment in rural Ghana.</p>
+            <div class="mt-8 flex gap-6">
+              <a href="https://jobmatchgh.streamlit.app/" target="_blank" 
+                 class="glass px-8 py-3 rounded-full font-bold text-cyan-400 border-2 border-cyan-400/30 hover-scale aura-cyan">
+                🚀 Live Demo
+              </a>
+              <p class="text-cyan-400 font-bold">Publicly Deployed</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Daakye Student Analytics -->
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <h3 class="text-5xl font-bold text-cyan-400">Daakye Student Analytics</h3>
+            <p class="text-gray-400 mt-4">Streamlit • Educational Analytics</p>
+            <p class="text-xl text-gray-300 mt-8 leading-relaxed">Real-time academic performance tracker for D.O. Boadu Educational Complex.</p>
+            <div class="mt-8 flex gap-6">
+              <a href="https://daakye-analytics-by-bio-godfred0ai-ml-engineer.streamlit.app/" target="_blank" 
+                 class="glass px-8 py-3 rounded-full font-bold text-cyan-400 border-2 border-cyan-400/30 hover-scale aura-cyan">
+                🚀 Live Demo
+              </a>
+              <p class="text-cyan-400 font-bold">Active School Use</p>
+            </div>
+          </div>
+          <div x-data="{ slides: ['student.jpeg','student1.jpeg','student2.jpeg'], index: 0 }" 
+               @click="index = (index + 1) % slides.length" 
+               class="relative rounded-3xl overflow-hidden cursor-pointer group aura-purple hover-scale">
+            <template x-for="(slide, i) in slides" :key="i">
+              <img :src="'/static/images/projects/' + slide" x-show="i === index" x-transition class="w-full rounded-3xl shadow-2xl border border-gray-800" alt="Daakye">
+            </template>
+            <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+              <template x-for="(slide, i) in slides">
+                <div :class="i === index ? 'w-8 bg-purple-500' : 'w-2 bg-gray-600'" class="h-2 rounded-full transition-all"></div>
+              </template>
+            </div>
+          </div>
+        </div>
+
+        <!-- DCLM Church Manager -->
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <img src="/static/images/projects/dclm.jpeg" 
+               class="rounded-3xl shadow-2xl border border-gray-800 aura-cyan hover-scale cursor-pointer" 
+               alt="DCLM App">
+          <div>
+            <h3 class="text-5xl font-bold text-cyan-400">DCLM Church Manager</h3>
+            <p class="text-gray-400 mt-4">Flask • Finance + Attendance</p>
+            <p class="text-xl text-gray-300 mt-8 leading-relaxed">Complete church management system used by real church branch.</p>
+            <div class="mt-8 flex gap-6">
+              <a href="https://dclm-mka6.onrender.com/" target="_blank" 
+                 class="glass px-8 py-3 rounded-full font-bold text-cyan-400 border-2 border-cyan-400/30 hover-scale aura-cyan">
+                🚀 Live Demo
+              </a>
+              <p class="text-cyan-400 font-bold">Production Ready</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT WITH GITHUB & LINKEDIN -->
+  <section id="contact" class="py-32 px-8 max-w-7xl mx-auto text-center" data-aos="fade-up">
+    <div class="glass p-12 lg:p-20 hover-scale max-w-4xl mx-auto">
+      <h2 class="text-5xl lg:text-6xl font-black text-cyan-400 mb-8">Let's Build the Future</h2>
+      <p class="text-2xl text-gray-300 mb-12">Open for internships • freelance • collaborations • full-time</p>
+      
+      <!-- Main Contact Button -->
+      <a href="mailto:godfredbio2004@gmail.com" 
+         class="bg-gradient-to-r from-cyan-400 to-blue-500 text-black px-12 py-6 rounded-full text-xl font-bold hover-scale aura-cyan inline-flex items-center gap-3 shadow-2xl mb-12">
+        📧 Say Hello
+      </a>
+
+      <!-- Social Links -->
+      <div class="flex flex-wrap justify-center gap-8 mb-12">
+        <a href="https://github.com/GodfredsPrim" target="_blank" 
+           class="social-icon github-icon group">
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.185 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+          </svg>
+          <span class="sr-only">GitHub</span>
+        </a>
+
+        <a href="https://www.linkedin.com/in/godfred-bio-0707052bb/" target="_blank" 
+           class="social-icon linkedin-icon group">
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+          </svg>
+          <span class="sr-only">LinkedIn</span>
+        </a>
+      </div>
+
+      <p class="text-gray-500 text-lg">Dribbble • Behance → Coming Soon</p>
+    </div>
+  </section>
+
+  <!-- SCRIPTS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000, once: true });
+
+    function copyEmail() {
+      navigator.clipboard.writeText("godfredbio2004@gmail.com");
+      const btn = event.target;
+      const originalText = btn.innerHTML;
+      btn.innerHTML = "✅ Copied!";
+      btn.classList.add('bg-green-500/20', 'border-green-500/30', 'text-green-400');
+      setTimeout(() => {
+        btn.innerHTML = originalText;
+        btn.classList.remove('bg-green-500/20', 'border-green-500/30', 'text-green-400');
+      }, 2000);
+    }
+
+    // Visitor Counter
+    fetch('https://api.countapi.xyz/hit/godfredprim3/visits')
+      .then(r => r.json())
+      .then(d => {
+        document.getElementById('visitor-count').textContent = d.value;
+      }).catch(() => {
+        document.getElementById('visitor-count').textContent = '∞';
+      });
+  </script>
+
+  <!-- ADVANCED FULL-PAGE PARTICLE ANIMATION -->
+  <script>
+    const canvas = document.getElementById('particles');
+    const ctx = canvas.getContext('2d');
+    
+    let particles = [];
+    let animationId;
+    
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    
+    const colors = ['#06fbd0', '#a78bfa', '#c084fc', '#22d3ee', '#fbbf24'];
+    
+    class Particle {
+      constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.size = Math.random() * 4 + 1;
+        this.speedX = Math.random() * 0.8 - 0.4;
+        this.speedY = Math.random() * 0.8 - 0.4;
+        this.color = colors[Math.floor(Math.random() * colors.length)];
+        this.opacity = Math.random() * 0.5 + 0.2;
+      }
+      
+      update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+        
+        if (this.x > canvas.width || this.x < 0) this.speedX *= -1;
+        if (this.y > canvas.height || this.y < 0) this.speedY *= -1;
+        
+        // Gentle floating motion
+        this.y += Math.sin(Date.now() * 0.001 + this.x * 0.01) * 0.3;
+      }
+      
+      draw() {
+        const gradient = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.size * 15);
+        gradient.addColorStop(0, this.color + Math.floor(this.opacity * 255).toString(16).padStart(2, '0'));
+        gradient.addColorStop(1, this.color + '00');
+        
+        ctx.fillStyle = gradient;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size * 15, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+    
+    function init() {
+      particles = [];
+      const count = Math.max(60, (canvas.width * canvas.height) / 8000);
+      for (let i = 0; i < count; i++) {
+        particles.push(new Particle());
+      }
+    }
+    
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particles.forEach(particle => {
+        particle.update();
+        particle.draw();
+      });
+      animationId = requestAnimationFrame(animate);
+    }
+    
+    // Initialize
+    resizeCanvas();
+    init();
+    animate();
+    
+    // Handle resize
+    window.addEventListener('resize', () => {
+      cancelAnimationFrame(animationId);
+      resizeCanvas();
+      init();
+      animate();
+    });
+  </script>
+</body>
+</html>
